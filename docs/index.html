@@ -62,7 +62,7 @@
 
 <div class="container row">
     <div class="carousel carousel-slider center s12" data-indicators="true">
-        <div class="carousel-item center-align" href="#one!">
+        <div class="carousel-item center-align black" href="#one!">
             <img src="img/building2.jpg">
             <div class="content">
                 <div class="carousel-semi container white-text">
@@ -73,9 +73,16 @@
                 </div>
             </div>
         </div>
-        <div class="carousel-item amber white-text" href="#two!">
-            <h2>Second Panel</h2>
-            <p class="white-text">This is your second panel</p>
+        <div class="carousel-item center-align black" href="#one!">
+            <img src="img/interior.jpg">
+            <div class="content">
+                <div class="carousel-semi container white-text">
+                    <h4>Professional Office Cleaning</h4>
+                    <p>The cleanliness of your offices in one of the first things your clients will notice when they
+                        enter into your company. Make the right impression by hiring the right people, like The Deeds
+                        Limpeza. We are one of the reputed names offering office cleaning services.</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -134,7 +141,10 @@
 
 <!-- Initialize components -->
 <script type="text/javascript">
-    $('.carousel.carousel-slider').carousel({fullWidth: true});
+    $('.carousel.carousel-slider').carousel({
+        fullWidth: true,
+        indicators: true
+    });
 </script>
 <!--Import Font Awesome-->
 <script src="https://use.fontawesome.com/cad94addce.js"></script>
