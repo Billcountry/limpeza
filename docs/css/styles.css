@@ -26,7 +26,7 @@ body {
     margin-top: -64px;
 }
 
-body::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 7px;
 }
 
@@ -41,19 +41,20 @@ body::-webkit-scrollbar {
 .carousel-item img + .content {
     position: absolute;
     top: 0;
-    left: 0;
+    max-height: calc(90% - 64px);
+    width: auto;
 }
 
-body::-webkit-scrollbar-track-piece {
+::-webkit-scrollbar-track-piece {
     background-color: #1C2331;
 }
 
-body::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background-color: #cccccc;
     border-radius: 10%;
 }
 
-body::-webkit-scrollbar-button {
+::-webkit-scrollbar-button {
     background-color: #aaaaaa;
 }
 
@@ -89,4 +90,16 @@ body::-webkit-scrollbar-button {
 }
 a.btn{
     margin: 2px;
+}
+
+.client-blue{
+    background-color: #004660;
+}
+
+.client-blue-accent{
+    background-color: #115771;
+}
+
+.client-blue-text{
+    color: #004660 !important;
 }
