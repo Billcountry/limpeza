@@ -41,8 +41,19 @@ body {
 .carousel-item img + .content {
     position: absolute;
     top: 0;
-    max-height: calc(90% - 64px);
-    width: auto;
+    left: 0;
+}
+
+.carousel-item img {
+    max-height: 80vh !important;
+    min-height: 50vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel {
+    max-height: 80vh;
+    min-height: 45vh;
 }
 
 ::-webkit-scrollbar-track-piece {
@@ -68,6 +79,10 @@ body {
     margin-top: 40px;
 }
 
+.carousel-semi p {
+    font-size: 150% !important;
+}
+
 @media only screen and (max-width: 600px) {
     .carousel-semi {
         padding: 10px 5px;
@@ -75,36 +90,30 @@ body {
     }
 
     .carousel-semi p {
-        font-size: 90%;
-    }
-
+    font-size: 130% !important;
+}
     .carousel-semi h4 {
-        font-size: 130%;
+        font-size: 150% !important;
     }
 }
 
-@media only screen and (max-width: 400px) {
-    .carousel-semi h4 {
-        display: none;
-    }
-}
-a.btn{
+a.btn {
     margin: 2px;
 }
 
-.client-blue{
+.client-blue {
     background-color: #004660;
 }
 
-.client-blue-accent{
+.client-blue-accent {
     background-color: #115771;
 }
 
-.client-blue-text{
+.client-blue-text {
     color: #004660 !important;
 }
 
-.main-container{
+.main-container {
     padding: 10px 10px 20px 10px;
     margin: 10px auto;
 }
