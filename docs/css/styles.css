@@ -44,6 +44,10 @@ body {
     left: 0;
 }
 
+a.btn{
+    margin: 2px !important;
+}
+
 .carousel-item img {
     max-height: 80vh !important;
     min-height: 50vh;

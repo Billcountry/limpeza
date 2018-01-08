@@ -92,10 +92,10 @@
 
         </div>
         <div class="center">
-            <span class="waves-effect waves-purple btn white client-blue-text">
-                <i class="fa fa-eraser"></i> Cleaning Services</span>
-            <span class="waves-effect waves-purple btn client-blue-text white">
-                <i class="fa fa-building"></i> Real Estate</span>
+            <a class="waves-effect waves-purple btn white client-blue-text" onclick="{page('#services'); $('ul.tabs').tabs('select_tab', 'tab_clean'); $('.carousel.carousel-slider').carousel({fullWidth: true});}">
+                <i class="fa fa-eraser"></i> Cleaning Services</a>
+            <a class="waves-effect waves-purple btn client-blue-text white" onclick="{page('#services'); $('ul.tabs').tabs('select_tab', 'tab_real'); $('.carousel.carousel-slider').carousel({fullWidth: true});}">
+                <i class="fa fa-building"></i> Real Estate</a>
         </div>
         <span class="row"><span class="col s12">&nbsp;</span></span>
     </div>
@@ -227,8 +227,8 @@
 <div class="white d-none main-container row" id="services">
     <div class="col s12 client-blue">
       <ul class="tabs client-blue">
-        <li class="tab col s6"><a class="waves-effect waves-light white-text" href="#tab_clean">Professional Cleaning</a></li>
-        <li class="tab col s6"><a class="waves-effect waves-light white-text" href="#tab_real">Real Estate</a></li>
+        <li class="tab col s6"><a class="waves-effect waves-light white-text" href="#tab_clean" onclick="{$('.carousel.carousel-slider').carousel({fullWidth: true});}">Professional Cleaning</a></li>
+        <li class="tab col s6"><a class="waves-effect waves-light active white-text" href="#tab_real" onclick="{$('.carousel.carousel-slider').carousel({fullWidth: true});}">Real Estate</a></li>
       </ul>
     </div>
     <div id="tab_real" class="col s12">
@@ -571,10 +571,7 @@
 
 <!-- Initialize components -->
 <script type="text/javascript">
-    $('.carousel.carousel-slider').carousel({
-        fullWidth: true,
-        indicators: true
-    });
+    $('.carousel.carousel-slider').carousel({fullWidth: true});
 
     setInterval(function () {
         $('.carousel').carousel('next');
@@ -601,6 +598,7 @@
         if (document.querySelector(identifier).classList.contains('d-none')) {
             document.querySelector(identifier).classList.remove('d-none');
         }
+        $('.carousel.carousel-slider').carousel({fullWidth: true});
         $('html, body').animate({scrollTop: 0}, 800);
     };
     switch (window.location.hash) {
