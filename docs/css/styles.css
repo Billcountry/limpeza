@@ -47,13 +47,13 @@ body {
 .carousel-item img {
     max-height: 80vh !important;
     min-height: 50vh;
-    width: 100%;
+    width: auto;
     overflow: hidden;
 }
 
 .carousel {
     max-height: 80vh;
-    min-height: 45vh;
+    min-height: 50vh;
 }
 
 ::-webkit-scrollbar-track-piece {
@@ -80,7 +80,7 @@ body {
 }
 
 .carousel-semi p {
-    font-size: 150% !important;
+    font-size: 150%;
 }
 
 @media only screen and (max-width: 600px) {
@@ -90,10 +90,10 @@ body {
     }
 
     .carousel-semi p {
-    font-size: 130% !important;
+    font-size: 130%;
 }
     .carousel-semi h4 {
-        font-size: 150% !important;
+        font-size: 150%;
     }
 }
 
