@@ -6,7 +6,6 @@
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
 
-    <script src="https://use.fontawesome.com/cad94addce.js"></script>
 
     <!--Import Custom CSS-->
     <link type="text/css" rel="stylesheet" href="css/styles.css" media="screen,projection"/>
@@ -27,6 +26,7 @@
             </a>
             <a href="#" class="brand-logo left hide-on-small-and-down">
                 <img style="float: left;" class="logo-img" src="img/logo.jpg">
+
                 <span style="float: left;">&nbsp;The Deeds Limpeza</span>
                 <span style="clear: left;"></span>
             </a>
@@ -46,7 +46,7 @@
         <div class="user-view">
             <a href="#"><img class="circle" src="img/logo.jpg"></a>
             <a href="#"><span class="white-text name">The Deeds Limpeza<br>(Kenya) </span></a>
-            <a href="#"><span class="white-text email">support@theddedslimpeza.com</span></a>
+            <a href="#"><span class="white-text email" style="font-style: italic;">Deeds well done</span></a>
         </div>
     </li>
     <li><a href="#home" onclick="page('#home')"><i class="fa fa-home client-blue-text"></i> Home</a></li>
@@ -105,31 +105,26 @@
         <span class="row"><span class="col s12">&nbsp;</span></span>
     </div>
 
-    <div class="row">
-        <div class="col s12 m6 l4">
-            <div class="card">
+    <div class="row flex">
+        <div class="col s12 m6 l4 card">
                 <div class="card-image">
-                    <img src="img/interior.jpg">
-                    <span class="card-title black-text">Cleaning services</span>
+                    <img src="img/clean1.jpeg">
+                    <span class="card-title">Cleaning services</span>
                 </div>
                 <div class="card-action">
                     <a class="client-blue-text" onclick="{page('#services'); $('ul.tabs').tabs('select_tab', 'tab_clean'); $('.carousel.carousel-slider').carousel({fullWidth: true});}" href="#">View</a>
                 </div>
-            </div>
         </div>
-        <div class="col s12 m6 l4">
-            <div class="card">
+        <div class="col s12 m6 l4 card">
                 <div class="card-image">
-                    <img src="img/building2.jpg">
+                    <img src="img/real1.jpeg">
                     <span class="card-title">Real Estate</span>
                 </div>
                 <div class="card-action">
                     <a class="client-blue-text" onclick="{page('#services'); $('ul.tabs').tabs('select_tab', 'tab_real'); $('.carousel.carousel-slider').carousel({fullWidth: true});}" href="#">View</a>
                 </div>
-            </div>
         </div>
-        <div class="col s12 m6 offset-m3 l4">
-            <div class="card">
+        <div class="col card s12 m6 offset-m3 l4">
                 <div class="card-image">
                     <img src="img/kenya-landscape.jpg">
                     <span class="card-title">Plots for sale</span>
@@ -137,7 +132,6 @@
                 <div class="card-action">
                     <a class="client-blue-text" href="#">View</a>
                 </div>
-            </div>
         </div>
     </div>
 </div>
@@ -570,48 +564,46 @@
             </div>
         </div>
         <div class="col m8 s12 offset-m2 client-blue-accent">
-            <ul class="collection black-text">
-                <li class="white-text">
+            <div class="white-text">
                     <h5>Our Core Values</h5>
                     <p>Our Values reflects who we are and what we stand for as a company</p>
-                </li>
-                <li class="collection-item">
+                <p class="">
                     <strong>Customer Commitment :</strong>
                     <span class="small">
                     We develop relationships that make a positive different in our customers' lives.
                 </span>
-                </li>
-                <li class="collection-item">
+                </p>
+                <p class="">
                     <strong>Integrity :</strong>
                     <span class="small">
                     We uphold the highest standards of integrity in all our actions.
                 </span>
-                </li>
-                <li class="collection-item">
+                </p>
+                <p class="">
                     <strong>Team Work :</strong>
                     <span class="small">
                     We work together across boundaries, to meet the need of our customers and help the company win.
                 </span>
-                </li>
-                <li class="collection-item">
+                </p>
+                <p class="">
                     <strong>A Win To Win :</strong>
                     <span class="small">
                     We exhibit a strong will to win in the marketplace and in every aspect of our business.
                 </span>
-                </li>
-                <li class="collection-item">
+                </p>
+                <p class="">
                     <strong>Personal Accountability :</strong>
                     <span class="small">
                     We are personally accountable for delivering on our commitment.
                 </span>
-                </li>
-                <li class="collection-item">
+                </p>
+                <p class="">
                     <strong>Quality :</strong>
                     <span class="small">
                     We provide unsurpassed services that deliver premium value to our customers.
                 </span>
-                </li>
-            </ul>
+                </p>
+            </div>
         </div>
     </div>
     <div class="footer-copyright">
@@ -666,5 +658,6 @@
             page(window.location.hash);
     }
 </script>
+    <script src="https://use.fontawesome.com/cad94addce.js"></script>
 </body>
 </html>
