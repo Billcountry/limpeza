@@ -1,3 +1,8 @@
+#map {
+    min-height: 400px !important;
+    background-color: #cccccc;
+}
+
 .logo-img {
     max-height: 64px !important;
     width: auto;

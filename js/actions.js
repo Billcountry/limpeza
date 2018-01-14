@@ -16,7 +16,7 @@ function send_message() {
     data += "<p>"+message+"</p>";
 
     Email.send(name+" <"+sender+">",
-        "miltonmwanzia@icloud.com",
+        "info@thedeedslimpeza.co.ke",
         "Web Contact Form: "+subject,
         data,
         {token: "39310210-96da-4a23-89a4-930f87f52b3b"});
