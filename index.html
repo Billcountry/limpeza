@@ -496,55 +496,62 @@
             from our Complete Cleaning Package.</p>
     </div>
 </div>
-
-<div class="d-none container white main-container" id="contact">
-    <div class="row">
-        <form class="col s12 center client-blue-text">
-            <h5>Contact Us</h5>
-            <div class="center">
-                <a href="#" class="waves-effect waves-light btn white blue-text text-darken-4"><i
-                        class="fa fa-facebook"></i>
-                    Facebook</a>
-                <a href="#" class="waves-effect waves-light btn white light-blue-text"><i class="fa fa-twitter"></i>
-                    Twitter</a>
-                <a href="#" class="waves-effect waves-light btn white red-text"><i class="fa fa-google-plus"></i>
-                    Google+</a>
+<div id="contact" class="d-none white maincontainer">
+        <div class="center" style="margin-bottom: 5px;">
+            <a href="#" class="waves-effect waves-red blue-text text-darken-4 btn white"><i
+                    class="fa fa-facebook"></i>
+                Facebook</a>
+            <a href="#" class="waves-effect waves-red btn white light-blue-text"><i class="fa fa-twitter"></i>
+                Twitter</a>
+            <a href="#" class="waves-effect waves-red btn white red-text"><i class="fa fa-google-plus"></i>
+                Google+</a>
+        </div>
+        <div class="row flex">
+            <form action="javascript:{ send_message(); }" name="message"
+                  class="col s12 m6 center red-text text-darken-3">
+                <h5 class="center red-text">Contact Us</h5>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fa fa-user prefix"></i>
+                        <input id="txt_name" type="text" class="validate">
+                        <label for="txt_name">Your Name</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <i class="fa fa-phone prefix"></i>
+                        <input type="tel" id="txt_phone" class="validate">
+                        <label for="txt_phone">Phone</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <i class="fa fa-envelope-o prefix"></i>
+                        <input id="txt_email" type="email" class="validate">
+                        <label for="txt_email">Email</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <i class="fa fa-envelope-o prefix"></i>
+                        <input id="txt_subject" type="text" class="validate">
+                        <label for="txt_subject">Subject</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fa fa-edit prefix"></i>
+                        <textarea id="txt_message" class="materialize-textarea"></textarea>
+                        <label for="txt_message">Message</label>
+                    </div>
+                </div>
+                <button class="btn btn-flat red white-text" type="submit"><i class="fa fa-send-o"> Submit</i></button>
+            </form>
+            <div class='col s12 m6'>
+                <p class='flow-text black-text hide-on-med-and-up'><strong>Our Location:</strong>
+                    Paramount Plaza<br>3rd Floor Suite A12<br><span class='small'><strong>Address:</strong> Kipande, Globe Round About, Muranga Rd, Nairobi</span>
+                </p>
+                <div id="map"></div>
+                <p class='flow-text black-text hide-on-small-only'><strong>Our Location:</strong>
+                    Paramount Plaza<br>3rd Floor Suite A12<br><span class='small'><strong>Address:</strong> Kipande, Globe Round About, Muranga Rd, Nairobi</span>
+                </p>
             </div>
-            <div class="row">
-                <div class="input-field col s12 m6">
-                    <i class="fa fa-user prefix"></i>
-                    <input id="icon_prefix" type="text" class="validate">
-                    <label for="icon_prefix">First Name</label>
-                </div>
-                <div class="input-field col s12 m6">
-                    <i class="fa fa-user prefix"></i>
-                    <input id="icon_telephone" type="text" class="validate">
-                    <label for="icon_telephone">Last Name</label>
-                </div>
-                <div class="input-field col s12 m6">
-                    <i class="fa fa-envelope-o prefix"></i>
-                    <input type="email" class="validate">
-                    <label for="icon_prefix">Email</label>
-                </div>
-                <div class="input-field col s12 m6">
-                    <i class="fa fa-phone prefix"></i>
-                    <input type="tel" class="validate">
-                    <label for="icon_telephone">Phone</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fa fa-edit prefix"></i>
-                    <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                    <label for="icon_prefix2">Message</label>
-                </div>
-            </div>
-            <button class="btn btn-flat client-blue white-text"><i class="fa fa-send-o"> Submit</i></button>
-        </form>
+        </div>
     </div>
-
-</div>
-
 <footer class="page-footer client-blue">
     <div class="row flex">
         <div class="card col m6 s12 client-blue-accent">
@@ -638,7 +645,7 @@
             }, // A function to be called when sideNav is closed
         }
     );
-
+    var first = true;
     var page = function (identifier) {
         document.querySelector("#home").classList.add('d-none');
         document.querySelector("#services").classList.add('d-none');
@@ -647,7 +654,9 @@
             document.querySelector(identifier).classList.remove('d-none');
         }
         $('.carousel.carousel-slider').carousel({fullWidth: true});
-        $('html, body').animate({scrollTop: 0}, 800);
+        if (!first)
+            $('html, body').animate({scrollTop: 0}, 800);
+        first = false;
     };
     $(document).ready(function () {
         // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
@@ -659,7 +668,29 @@
         case "#contact":
             page(window.location.hash);
     }
+    function initMap() {
+        var uluru = {lat: -1.2771205, lng: 36.8215105};
+        var infowindow = new google.maps.InfoWindow({content: "<h5>Our Office</h5><p class='flow-text'>Paramount Plaza<br>3rd Floor Suite A12<br><small><strong>Address:</strong> Kipande, Globe Round About, Muranga Rd, Nairobi</small></p>"});
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: uluru,
+            place: "Paramount Plaza"
+        });
+        var marker = new google.maps.Marker({
+            position: uluru,
+            map: map,
+            label: "Paramount Plaza, 3rd Floor Suite A12"
+        });
+        marker.addListener('click', function () {
+            infowindow.open(map, marker);
+        });
+    }
 </script>
     <script src="https://use.fontawesome.com/cad94addce.js"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEjw1gRkHPdTce6PkeoxWb7DDewC7oZC0&callback=initMap">
+</script>
+<script src="https://smtpjs.com/v2/smtp.js"></script>
+<script src="js/actions.js"></script>
 </body>
 </html>

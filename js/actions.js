@@ -1,57 +1,26 @@
-/**
- * Created by ruth on 12/23/17.
- */
-
-var ajax = function (options) {
-    function setDefaultVal(value, defaultValue){
-        return (value === undefined) ? defaultValue : value;
-    }
-    var settings = {
-        url: setDefaultVal(options.url, ""),
-        type: setDefaultVal(options.type, "GET"),
-        headers: setDefaultVal(options.headers, {}),
-        data: setDefaultVal(options.data, {}),
-        dataType: setDefaultVal(options.dataType, "text"),
-        success: setDefaultVal(options.success, function (response) {
-            console.log(response);
-        }),
-        error: setDefaultVal(options.error, function (error) {
-            console.log(error)
-        })
-    };
-    // Can implement multiple methods of Ajax
-    if(Window.fetch) {
-        var data = new FormData();
-        if (settings.data !== undefined) {
-            Object.keys(settings.data).forEach(function (key) {
-                data.append(key, settings.data[key]);
-            });
-        }
-
-        function checkStatus(response) {
-            if (response.status >= 200 && response.status < 300) {
-                return response
-            } else {
-                var error = new Error(response.statusText);
-                error.response = response;
-                throw error;
-            }
-        }
-
-        function parseData(response) {
-            var type = response.headers.get('Content-Type');
-            if (settings.dataType === "json" || type.index("json") >= 0) {
-                return response.json();
-            } else {
-                return response.text()
-            }
-        }
-
-        fetch(settings.url, {
-            method: settings.type,
-            body: data
-        }).then(checkStatus).then(parseData).then(settings.success).catch(settings.error)
-    }else{
-        $.ajax(settings);
-    }
+var toast = function (message) {
+    Materialize.toast(message, 6000)
 };
+
+function send_message() {
+    var sender = document.querySelector("#txt_email").value;
+    var phone = document.querySelector("#txt_phone").value;
+    var name = document.querySelector("#txt_name").value;
+    var message = document.querySelector("#txt_message").value;
+    var subject = document.querySelector("#txt_subject").value;
+    var data = "";
+    data += "From: <a href='mailto:"+sender+"'>"+sender+"</a><br>";
+    data += "Phone: <a href='tel:"+phone+"'>"+phone+"</a><br>";
+    data += "Name: "+name+"<br>";
+    data += "<h4>"+name+"</h4>";
+    data += "<p>"+message+"</p>";
+
+    Email.send(name+" <"+sender+">",
+        "miltonmwanzia@icloud.com",
+        "Web Contact Form: "+subject,
+        data,
+        {token: "39310210-96da-4a23-89a4-930f87f52b3b"});
+
+    document.forms.message.reset();
+    toast("Message Sent.");
+}
