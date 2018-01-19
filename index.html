@@ -14,7 +14,7 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
-<body>
+<body onload="load_images()">
 <div class="navbar-fixed">
     <nav>
         <div class="nav-wrapper client-blue">
@@ -42,6 +42,11 @@
     </nav>
 </div>
 
+<div id="preloader" class="progress client-blue">
+	<div class="indeterminate white"></div>
+</div>
+
+
 <ul id="side-bar" class="side-nav">
     <li class="client-blue">
         <div class="user-view">
@@ -63,25 +68,25 @@
     <div class="white">
         <div class="carousel carousel-slider center client-blue" data-indicators="true">
             <a class="carousel-item" href="#">
-                <img src="img/clean10.jpeg">
+                <img class="async-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8dPv2fwAImAOJMh4kwgAAAABJRU5ErkJggg==" url="img/clean10.jpeg">
             </a>
             <a class="carousel-item" href="#">
-                <img src="img/building1.JPG">
+                <img class="async-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8dPv2fwAImAOJMh4kwgAAAABJRU5ErkJggg==" url="img/building1.JPG">
             </a>
             <a class="carousel-item" href="#">
-                <img src="img/clean11.jpeg">
+                <img class="async-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8dPv2fwAImAOJMh4kwgAAAABJRU5ErkJggg==" url="img/clean11.jpeg">
             </a>
             <a class="carousel-item" href="#">
-                <img src="img/clean13.jpeg">
+                <img class="async-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8dPv2fwAImAOJMh4kwgAAAABJRU5ErkJggg==" url="img/clean13.jpeg">
             </a>
             <a class="carousel-item" href="#">
-                <img src="img/building2.jpg">
+                <img class="async-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8dPv2fwAImAOJMh4kwgAAAABJRU5ErkJggg==" url="img/building2.jpg">
             </a>
             <a class="carousel-item" href="#">
-                <img src="img/clean12.jpeg">
+                <img class="async-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8dPv2fwAImAOJMh4kwgAAAABJRU5ErkJggg==" url="img/clean12.jpeg">
             </a>
             <a class="carousel-item" href="#">
-                <img src="img/interior.jpg">
+                <img class="async-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8dPv2fwAImAOJMh4kwgAAAABJRU5ErkJggg==" url="img/interior.jpg">
             </a>
         </div>
         <div class="container">
@@ -109,7 +114,7 @@
     <div class="row flex">
         <div class="col s12 m6 l4 card">
                 <div class="card-image">
-                    <img src="img/clean1.jpeg">
+                    <img class="async-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8dPv2fwAImAOJMh4kwgAAAABJRU5ErkJggg==" url="img/clean1.jpeg">
                     <span class="card-title">Cleaning services</span>
                 </div>
                 <div class="card-action">
@@ -118,7 +123,7 @@
         </div>
         <div class="col s12 m6 l4 card">
                 <div class="card-image">
-                    <img src="img/real1.jpeg">
+                    <img class="async-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8dPv2fwAImAOJMh4kwgAAAABJRU5ErkJggg==" url="img/real1.jpeg">
                     <span class="card-title">Real Estate</span>
                 </div>
                 <div class="card-action">
@@ -127,7 +132,7 @@
         </div>
         <div class="col card s12 m6 offset-m3 l4">
                 <div class="card-image">
-                    <img src="img/kenya-landscape.jpg">
+                    <img class="async-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8dPv2fwAImAOJMh4kwgAAAABJRU5ErkJggg==" url="img/kenya-landscape.jpg">
                     <span class="card-title">Plots for sale</span>
                 </div>
                 <div class="card-action">
@@ -232,10 +237,10 @@
     <div id="tab_real" class="col s12">
         <div class="carousel carousel-slider center client-blue" data-indicators="true">
             <a class="carousel-item" href="#">
-                <img src="img/building1.JPG">
+                <img class="async-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8dPv2fwAImAOJMh4kwgAAAABJRU5ErkJggg==" url="img/building1.JPG">
             </a>
             <a class="carousel-item" href="#">
-                <img src="img/building2.jpg">
+                <img class="async-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8dPv2fwAImAOJMh4kwgAAAABJRU5ErkJggg==" url="img/building2.jpg">
             </a>
         </div>
         <p class="flow-text">
@@ -356,19 +361,19 @@
     <div id="tab_clean" class="col s12">
         <div class="carousel carousel-slider center client-blue" data-indicators="true">
             <a class="carousel-item" href="#">
-                <img src="img/clean10.jpeg">
+                <img class="async-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8dPv2fwAImAOJMh4kwgAAAABJRU5ErkJggg==" url="img/clean10.jpeg">
             </a>
             <a class="carousel-item" href="#">
-                <img src="img/clean11.jpeg">
+                <img class="async-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8dPv2fwAImAOJMh4kwgAAAABJRU5ErkJggg==" url="img/clean11.jpeg">
             </a>
             <a class="carousel-item" href="#">
-                <img src="img/clean13.jpeg">
+                <img class="async-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8dPv2fwAImAOJMh4kwgAAAABJRU5ErkJggg==" url="img/clean13.jpeg">
             </a>
             <a class="carousel-item" href="#">
-                <img src="img/clean12.jpeg">
+                <img class="async-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8dPv2fwAImAOJMh4kwgAAAABJRU5ErkJggg==" url="img/clean12.jpeg">
             </a>
             <a class="carousel-item" href="#">
-                <img src="img/interior.jpg">
+                <img class="async-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8dPv2fwAImAOJMh4kwgAAAABJRU5ErkJggg==" url="img/interior.jpg">
             </a>
         </div>
         <p class="flow-text">The Deeds Limpeza (Kenya) Ltd is a cleaning company focused on delivering high quality and
@@ -686,10 +691,10 @@
         });
     }
 </script>
+<script src="https://smtpjs.com/v2/smtp.js"></script>
+<script src="js/actions.js"></script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEjw1gRkHPdTce6PkeoxWb7DDewC7oZC0&callback=initMap">
 </script>
-<script src="https://smtpjs.com/v2/smtp.js"></script>
-<script src="js/actions.js"></script>
 </body>
 </html>

@@ -24,3 +24,19 @@ function send_message() {
     document.forms.message.reset();
     toast("Message Sent.");
 }
+
+// Default image data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8dPv2fwAImAOJMh4kwgAAAABJRU5ErkJggg==
+
+function load_images(){
+	var images = document.querySelectorAll(".async-img");
+	if(document.querySelector("#preloader").classList.contains('d-none')){
+		document.querySelector("#preloader").classList.remove('d-none');
+	}
+	for(var id=0; id<images.length; id++){
+		var image = images[id];
+		var img_url = image.getAttribute('url');
+		image.src = img_url;
+	}
+	$('.carousel.carousel-slider').carousel({fullWidth: true});
+	document.querySelector("#preloader").classList.add('d-none');
+}
